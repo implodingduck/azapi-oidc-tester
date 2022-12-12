@@ -35,9 +35,13 @@ jobs:
           repository: 'implodingduck/terraform-provider-azurerm-azapi'
           ref: 'oidc'
           path: 'go/src/github.com/Azure/terraform-provider-azurerm-azapi'
-
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.18.2'
       - run: |
           ls -lta
+          cd go/src/github.com/Azure/terraform-provider-azurerm-azapi
+          make build
 
       # - name: Install Node
       #   uses: actions/setup-node@v2
