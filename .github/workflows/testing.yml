@@ -34,6 +34,7 @@ jobs:
         with:
           repository: 'implodingduck/terraform-provider-azurerm-azapi'
           ref: 'oidc'
+          path: 'go/src/github.com/Azure/terraform-provider-azurerm-azapi'
 
       - run: |
           ls -lta
