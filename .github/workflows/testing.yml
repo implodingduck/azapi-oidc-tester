@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/checkout@v3
         with:
-          repository: 'https://github.com/implodingduck/terraform-provider-azurerm-azapi'
+          repository: 'implodingduck/terraform-provider-azurerm-azapi'
           ref: 'oidc'
 
       - run: |
