@@ -8,6 +8,10 @@ terraform {
       source  = "hashicorp/random"
       version = "=3.1.0"
     }
+    azapi = {
+      source = "azure/azapi"
+      version = "=1.1.0"
+    }
   }
   backend "azurerm" {
 
@@ -52,4 +56,15 @@ resource "azurerm_resource_group" "rg" {
   name     = "rg-${local.gh_repo}-${random_string.unique.result}-${local.loc_for_naming}"
   location = var.location
   tags = local.tags
+}
+
+resource "azapi_resource" "azapirg" {
+  type = "Microsoft.Resources/resourceGroups@2021-04-01"
+  name = "azapi-rg-${local.gh_repo}-${random_string.unique.result}-${local.loc_for_naming}"
+  location = var.location
+  parent_id = var.subscription_id
+  tags = local.tags
+  body = jsonencode({
+    properties = {}
+  })
 }
