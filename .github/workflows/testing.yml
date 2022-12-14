@@ -78,10 +78,10 @@ jobs:
 
       - name: plan terraform
         env:
-          ARM_CLIENT_ID: ${{ steps.kvAction.outputs.ARM-CLIENT-ID }}
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID  }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           ARM_USE_OIDC: true 
-          ARM_TENANT_ID: ${{ steps.kvAction.outputs.ARM-TENANT-ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           TF_VAR_container_name: ${{ steps.kvAction.outputs.container-name }}
           TF_VAR_resource_group_name: ${{ steps.kvAction.outputs.resource-group-name }}
           TF_VAR_storage_account_name: ${{ steps.kvAction.outputs.storage-account-name }}
@@ -97,10 +97,10 @@ jobs:
 
       - name: apply terraform
         env:
-          ARM_CLIENT_ID: ${{ steps.kvAction.outputs.ARM-CLIENT-ID }}
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID  }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_USE_OIDC: true
-          ARM_TENANT_ID: ${{ steps.kvAction.outputs.ARM-TENANT-ID }}
+          ARM_USE_OIDC: true 
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           TF_VAR_container_name: ${{ steps.kvAction.outputs.container-name }}
           TF_VAR_resource_group_name: ${{ steps.kvAction.outputs.resource-group-name }}
           TF_VAR_storage_account_name: ${{ steps.kvAction.outputs.storage-account-name }}
