@@ -44,7 +44,7 @@ jobs:
           make build
           echo $GOBIN
           echo $GOPATH
-          cd ../../../../
+          cd ../../../../../
           ls -lta
           
 
