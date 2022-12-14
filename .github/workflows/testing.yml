@@ -49,6 +49,7 @@ jobs:
           cd ../../../../../
           ls -lta
           ls -lta /home/runner/go
+          ls -lta /home/runner/go/bin
 
       - name: Install Node
         uses: actions/setup-node@v2
