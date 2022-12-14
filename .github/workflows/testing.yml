@@ -42,6 +42,7 @@ jobs:
           ls -lta
           cd go/src/github.com/Azure/terraform-provider-azurerm-azapi
           make build
+          ls -lta
           echo $GOBIN
           echo $GOPATH
           cd ../../../../../
