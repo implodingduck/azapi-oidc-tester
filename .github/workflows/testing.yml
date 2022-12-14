@@ -88,6 +88,7 @@ jobs:
           TF_VAR_subscription_id: ${{ steps.kvAction.outputs.subscription-id }}
           TF_VAR_key: ${{ github.repository }}.tfstate
           TF_VAR_gh_repo: ${{ github.repository }}
+          TF_CLI_CONFIG_FILE: "/home/runner/work/azapi-oidc-tester/azapi-oidc-tester/terraform/.terraformrc"
         run: |
             echo "starting..."
             cd terraform
@@ -107,6 +108,7 @@ jobs:
           TF_VAR_subscription_id: ${{ steps.kvAction.outputs.subscription-id }}
           TF_VAR_key: ${{ github.repository }}.tfstate
           TF_VAR_gh_repo: ${{ github.repository }}
+          TF_CLI_CONFIG_FILE: "/home/runner/work/azapi-oidc-tester/azapi-oidc-tester/terraform/.terraformrc"
         run: |
             echo "starting..."
             cd terraform
