@@ -43,8 +43,10 @@ jobs:
           cd go/src/github.com/Azure/terraform-provider-azurerm-azapi
           make build
           echo $GOBIN
-          ls -lta go
-          ls -lta go/bin
+          cd go
+          ls -lta
+          cd bin
+          ls -lta
 
       - name: Install Node
         uses: actions/setup-node@v2
