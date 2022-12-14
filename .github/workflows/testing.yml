@@ -43,7 +43,7 @@ jobs:
           cd go/src/github.com/Azure/terraform-provider-azurerm-azapi
           make build
           echo $GOBIN
-          cd go
+          cd ../../../../
           ls -lta
           cd bin
           ls -lta
