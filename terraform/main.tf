@@ -62,7 +62,7 @@ resource "azapi_resource" "azapirg" {
   type = "Microsoft.Resources/resourceGroups@2021-04-01"
   name = "azapi-rg-${local.gh_repo}-${random_string.unique.result}-${local.loc_for_naming}"
   location = var.location
-  parent_id = var.subscription_id
+  parent_id = "/subscriptions/${var.subscription_id}"
   tags = local.tags
   body = jsonencode({
     properties = {}
