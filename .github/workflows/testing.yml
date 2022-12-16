@@ -39,17 +39,14 @@ jobs:
         with:
           go-version: '1.18.2'
       - run: |
-          pwd
-          ls -lta
+          
           cd go/src/github.com/Azure/terraform-provider-azurerm-azapi
           make build
-          ls -lta
-          echo $GOBIN
-          echo $GOPATH
-          cd ../../../../../
-          ls -lta
-          ls -lta /home/runner/go
-          ls -lta /home/runner/go/bin
+          echo $AZURE_AUTHORITY_HOST
+          echo $AZURE_FEDERATED_TOKEN_FILE
+          echo $ACTIONS_ID_TOKEN_REQUEST_URL
+          echo $INPUT_AUDIENCE
+          
 
       - name: Install Node
         uses: actions/setup-node@v2
