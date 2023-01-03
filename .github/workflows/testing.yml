@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: 'implodingduck/terraform-provider-azurerm-azapi'
-          ref: 'oidcmerge'
+          ref: 'use_oidc'
           path: 'go/src/github.com/Azure/terraform-provider-azurerm-azapi'
       - uses: actions/setup-go@v3
         with:
